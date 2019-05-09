@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import './scss/vars';
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 18px;
+  font-family: $mainFont;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $color1;
+}
