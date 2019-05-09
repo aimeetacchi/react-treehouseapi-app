@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
+import Base from './components/base';
+import Header from './components/header';
 
 function App() {
   return (
     <div style={{ textAlign: 'center'}}>
-      <h1>Hello World</h1>
-      <p>Starter files for creating your own react application, as Scss set up.</p>
+    <Header/>
+    <Base/>
     </div>
   );
 }
