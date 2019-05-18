@@ -18,5 +18,80 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  color: $color1;
+  color: $dark;
+}
+
+header {
+  height: 40vh;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color1;
+  padding: 0 2em;
+
+  img {
+    max-width: 600px;
+    width: 100%;
+    display: block;
+  }
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+   @media (min-width: $tabletQuery) {
+     width: 70%;
+   }
+}
+.toogleon {
+  display: block
+}
+
+.badges-list {
+  padding: 0;
+  margin: 0;
+
+  @media(min-width:tabletQuery){
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+   width: 100%;
+   background-color: #f1f1f1;
+
+    @media(min-width:tabletQuery){
+      width: 50%;
+    }
+
+    @media(min-width:desktopQuery){
+      width: 24%;
+    }
+  }
+  li:nth-child(even){
+    background-color: $color1;
+  }
+}
+
+.username {
+  padding: 2em 0;
+  background-color: #f1f1f1;
+
+}
+
+.toogleoff {
+  display: none;
+}
+
+.badges-container,
+.points-container {
+  background-color: $color1;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.points-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

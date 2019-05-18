@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Badges from './badges';
+import Points from './points';
 
 export default class Base extends Component {
 constructor(props){
@@ -8,7 +9,9 @@ constructor(props){
   this.state = {
     data: [],
     datareceived: false,
-    err: ''
+    err: '',
+    showBadges: false,
+    showPoints: false,
   }
 }
 
@@ -31,17 +34,45 @@ constructor(props){
             .catch(err => this.setState({err: err.message}))
     }
 
+    // toogleBadges = () => {
+    //   // console.log('clicking')
+    //     this.setState({showBadges: !this.state.showBadges});
+    // }
+
+    // tooglePoints = () => {
+    //   // console.log('clicking show points');
+    //   this.setState({showPoints: !this.state.showPoints});
+    // }
+
+    // Toogle Function
+    toogle = (type) => {
+      console.log('clicking');
+      this.setState({[type]: !this.state[type] });
+    }
+
   render() {
-
     return (
-      <div>
-        {this.state.datareceived ?  <Badges badges={this.state.data.badges}/> : 'fetching data please wait....'}
-       
+      <div className="data">
+      
+      {this.state.datareceived ?
+        
+        <React.Fragment>
+        <div className="username">
+          <img style={{width: '200px', borderRadius: '100px', margin: '0 auto', display: 'block'}} src={this.state.data.gravatar_url} alt="logo"/>
+          <strong>Username:</strong> {this.state.data.name}
+        </div>
+
        
 
-        {/* <Badges>
-          <h2>Hi there</h2>
-        </Badges> */}
+        {/* BADGES COMPONENT */}
+          <Badges showBadges={this.state.showBadges} badges={this.state.data.badges} toogle={this.toogle}/>
+
+        {/* POINTS COMPONENT */}
+          <Points showPoints={this.state.showPoints} points={this.state.data.points} toogle={this.toogle}/>
+
+        </React.Fragment>
+        : <div><p>fetching data please wait....</p></div> }
+       
       </div>
     )
   }

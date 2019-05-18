@@ -3,7 +3,7 @@ import React from 'react';
 export default function Header() {
   return (
     <header>
-      HEADER
+      <img src="/treehouse-logo.png" alt="team treehouse logo"/>
     </header>
   )
 }

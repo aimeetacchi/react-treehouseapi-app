@@ -5,7 +5,7 @@ import Header from './components/header';
 
 function App() {
   return (
-    <div style={{ textAlign: 'center'}}>
+    <div className="container" style={{ textAlign: 'center'}}>
     <Header/>
     <Base/>
     </div>
