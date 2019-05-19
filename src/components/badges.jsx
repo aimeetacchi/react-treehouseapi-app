@@ -4,20 +4,22 @@ export default class Badges extends Component {
 
 
 
-  render(props) {
-
+  render() {
+    // console.log(this.props.badges);
     let badges = this.props.badges.map((badge, i) => {
-        return <li style={{listStyle: 'none', padding: '10px 0'}} key={i}>{badge.name} - <br/><small style={{fontSize: '12px'}}>{badge.earned_date}</small></li>;
-        })
+      return <section style={{ listStyle: 'none' }} key={i}>{badge.name} - <br />
+        <img className="badgeIcon" src={badge.icon_url} alt="badge icon" />
+        <small style={{ fontSize: '12px' }}>{badge.earned_date}</small></section>;
+    })
 
     return (
       <div className="badges-container">
-        <h2 onClick={() => {this.props.toogle('showBadges')} }>Badges {this.props.showBadges ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>  } </h2>
+        <h2 onClick={() => { this.props.toogle('showBadges') }}>Badges {this.props.showBadges ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>} </h2>
         {/* {this.props.children} */}
 
-        <ul className={"badges-list " + (this.props.showBadges ? 'toogleon' : 'toogleoff')}>
-           {badges}
-        </ul>
+        <div className={"badges-list " + (this.props.showBadges ? 'toogleon' : 'toogleoff')}>
+          {badges}
+        </div>
       </div>
     )
   }

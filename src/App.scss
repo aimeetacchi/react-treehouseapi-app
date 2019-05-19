@@ -48,29 +48,40 @@ header {
 }
 
 .badges-list {
-  padding: 0;
+  padding: 1em;
   margin: 0;
 
-  @media(min-width:tabletQuery){
+  @media(min-width:$tabletQuery){
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  li {
+  section {
+   border-radius: 20px;
    width: 100%;
-   background-color: #f1f1f1;
+   background-color: #b7d6ff;
+   padding: 1em;
 
-    @media(min-width:tabletQuery){
-      width: 50%;
+    @media(min-width:$tabletQuery){
+      width: 49%;
+      margin: .5em 0;
     }
 
-    @media(min-width:desktopQuery){
-      width: 24%;
+    @media(min-width:$desktopQuery){
+      width: 32%;
     }
   }
-  li:nth-child(even){
+  section:nth-child(even){
     background-color: $color1;
   }
+}
+
+.badgeIcon {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto;
 }
 
 .username {
@@ -79,19 +90,35 @@ header {
 
 }
 
-.toogleoff {
-  display: none;
-}
-
 .badges-container,
 .points-container {
-  background-color: $color1;
+  background-color: #f1f1f1;
   max-width: 900px;
   margin: 0 auto;
   border-radius: 20px;
 }
+
 .points-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1em;
+  
+  
+  @media(min-width:$tabletQuery){
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  li {
+    width: 32%;
+    padding: 2em;
+    background-color: #fff;
+    margin: .5em 0;
+  }
+
+}
+
+.toogleoff {
+  display: none;
 }
